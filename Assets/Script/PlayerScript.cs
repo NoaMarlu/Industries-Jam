@@ -4,15 +4,42 @@ using UnityEngine;
 
 public class PlayerScript : MonoBehaviour
 {
-    // Start is called before the first frame update
+
+    //è„â∫ç∂âEÇÃà⁄ìÆ
+    [SerializeField]
+    private float SideMove = 10.0f;
+    [SerializeField]
+    private float LenghtMove = 5.0f;
+
     void Start()
     {
-        
     }
-
-    // Update is called once per frame
     void Update()
     {
-        
+        Move();
     }
+
+    void Move()
+    {
+        if (Input.GetKey(KeyCode.W))
+        {
+            this.transform.position += SideMove * Time.deltaTime * transform.right;
+        }
+        if (Input.GetKey(KeyCode.A))
+        {
+            this.transform.position += LenghtMove * Time.deltaTime * transform.up;
+        }
+        if (Input.GetKey(KeyCode.S))
+        {
+            this.transform.position -= SideMove * Time.deltaTime * transform.right;
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            this.transform.position -= LenghtMove * Time.deltaTime * transform.up;
+        }
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+    }
+
 }
