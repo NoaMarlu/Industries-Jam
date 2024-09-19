@@ -40,6 +40,18 @@ public class PlayerScript : MonoBehaviour
     }
     void Update()
     {
+        FlashTimerUpdate += Time.deltaTime;
+        Move();
+
+        if (FlashCount == true)
+        {
+            Flash();
+            if (FlashTimer > FlashTimeUpdate)
+            {
+                FlashCount = false;
+                FlashObject.enabled = true;
+            }
+        }//End if
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -52,20 +64,8 @@ public class PlayerScript : MonoBehaviour
             {
                 buckBoosters.Add(script);
             }
-            FlashTimerUpdate += Time.deltaTime;
-            Move();
-
-            if (FlashCount == true)
-            {
-                Flash();
-                if (FlashTimer > FlashTimeUpdate)
-                {
-                    FlashCount = false;
-                    FlashObject.enabled = true;
-                }
-            }//End if
-
-        }//End Update
+            
+        }
     }
 
     void Move()
