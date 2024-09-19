@@ -9,6 +9,7 @@ public class GameSystem : MonoBehaviour
     public float BaseSpeed=5.0f;
     public float MaxBossDistance = 1000.0f;
     public float GamePosition = 0.0f;
+    public float disSpeed=5.0f;//被弾でスピード下がる
     public Boss boss; // ボスの参照
     public bool isBossActive = false; // ボスがアクティブかどうか
     //public float 
@@ -29,6 +30,15 @@ public class GameSystem : MonoBehaviour
     void Start()
     {
         
+    }
+
+    public  void AddSpeed(float speed)
+    {
+        BaseSpeed += speed;
+    }
+    public void DisSpeed()
+    {
+        BaseSpeed -= disSpeed;
     }
 
     // Update is called once per frame
