@@ -16,7 +16,7 @@ public class Boss : MonoBehaviour
     private Vector3 startPosition; // 楕円軌道の開始位置
     private float timeElapsed = 0.0f; // 経過時間
     private SpriteRenderer spriteRenderer; // SpriteRenderer
-
+    private bool isBossActivated; // ボスが有効化されているかどうか
     //スポーンする場所
     public float spawnX = 10.0f;
 
@@ -36,10 +36,24 @@ public class Boss : MonoBehaviour
         // Collider2Dを追加（当たり判定用）
         BoxCollider2D collider = gameObject.AddComponent<BoxCollider2D>();
         collider.isTrigger = true; // トリガーとして機能
+        isBossActivated = true;
     }
-
+    public void SpawnBoss()
+    {
+        // ボスを画面内に出現させる
+        Instantiate(gameObject);
+        transform.position = new Vector3(spawnX, 0.0f, 0.0f);
+        isMovingLeft = true; // ボスが左移動を開始
+        isBossActivated = true; // ボスが有効化される
+    }
     void Update()
     {
+
+        if (!isBossActivated)
+        {
+            return; // ボスが有効化されるまで待機
+        }
+
         if (isMovingLeft)
         {
             // 左に移動
@@ -49,6 +63,7 @@ public class Boss : MonoBehaviour
             if (transform.position.x <= 10.0f - leftMoveDistance)
             {
                 isMovingLeft = false;
+                
                 startPosition = transform.position; // 楕円軌道の基準点
             }
         }

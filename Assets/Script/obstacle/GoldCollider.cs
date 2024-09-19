@@ -5,7 +5,7 @@ using UnityEngine;
 public class GoldCollider : MonoBehaviour
 {
     public GameObject player;
-    public GameObject Item;
+   // public GameObject Item;
     public GameObject obstale;
 
     // Start is called before the first frame update
@@ -28,7 +28,7 @@ public class GoldCollider : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
 
-                Instantiate(Item);
+                //Instantiate(Item);
 
                 Destroy(gameObject);
             
