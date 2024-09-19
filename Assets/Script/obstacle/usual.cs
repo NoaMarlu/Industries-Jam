@@ -213,7 +213,7 @@ public class usual : MonoBehaviour
             spriteObj.transform.Rotate(0, 0, rotationSpeed * Time.deltaTime);
 
             // ‰æ–ÊŠO‚Éo‚½‚çíœ
-            if (obj.transform.position.x < -10.0f)
+            if (obj.transform.position.x < DestroyX)
             {
                 Destroy(obj);
             }
