@@ -5,32 +5,27 @@ using UnityEngine;
 public class ItemScript : MonoBehaviour
 {
 
-    protected PlayerScript script;
     protected int number = 0;
     protected bool hit = false;
-    protected Vector3 ConnectPosition;
-    protected Vector3 NextPosition;
+    //アイテムの移動速度
+    protected float moveSpeed = 0.0f;
+    //移動方向
+    protected Vector3 moveDirection = new Vector3(0,1,0);
 
-
-    private void Update()
+    //アイテムが流れる速度を決める
+    public void SetMoveSpeed(float speed)
     {
-        if (hit)
+        moveSpeed = speed;
+    }
+
+    //画面内生存判定
+    public void SurvivalCheck()
+    {
+        if(transform.position.x < -15)
         {
-          
+            Destroy(gameObject);
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (!hit)
-        {
-            script = collision.GetComponent<PlayerScript>();
-
-            if (script != null)
-            {
-                hit = true;
-               
-            }
-        }
-    }
 }
+
