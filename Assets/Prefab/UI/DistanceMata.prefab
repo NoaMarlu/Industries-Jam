@@ -9,6 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6405546369150440832}
+  - component: {fileID: 5080767879420893778}
+  - component: {fileID: 2891830320212940412}
   m_Layer: 5
   m_Name: DistanceMata
   m_TagString: Untagged
@@ -39,6 +41,49 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &5080767879420893778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1514942049907149929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40a015b1163e4bb4abd18a91b23ad38d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPause: 0
+  fadeType: 0
+  wateTime: 1
+  maxAlpha: 1
+  isAutoInitialize: 1
+  autoActiveOut: 0
+  isDestroy: 0
+  objTypes: 
+  isFading: 0
+  et: 0
+--- !u!114 &2891830320212940412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1514942049907149929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97ebe1be27de6c74fbd9033452215e01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPause: 0
+  startPos: -165
+  endPos: 0
+  wateTime: 1
+  isAutoInitialize: 1
+  loop: 0
+  timer: 0
+  isDecision: 0
+  isReverse: 0
 --- !u!1 &8505443371968159205
 GameObject:
   m_ObjectHideFlags: 0

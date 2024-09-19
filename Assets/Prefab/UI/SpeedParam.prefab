@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 1171892187697008384}
   - component: {fileID: 1171892187697008385}
   - component: {fileID: 1171892187697008390}
+  - component: {fileID: 1171892187467955367}
+  - component: {fileID: 1171892187467955368}
   m_Layer: 5
   m_Name: SpeedParam
   m_TagString: Untagged
@@ -95,3 +97,46 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speedText: {fileID: 1171892187697008385}
   speed: 0
+--- !u!114 &1171892187467955367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1171892187697008388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627542fafebfa7f469a610997ffcadb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPause: 0
+  startPos: 1244
+  endPos: 845
+  wateTime: 1
+  isAutoInitialize: 1
+  loop: 0
+  timer: 0
+  isDecision: 0
+  isReverse: 0
+--- !u!114 &1171892187467955368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1171892187697008388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40a015b1163e4bb4abd18a91b23ad38d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPause: 0
+  fadeType: 0
+  wateTime: 1
+  maxAlpha: 1
+  isAutoInitialize: 1
+  autoActiveOut: 0
+  isDestroy: 0
+  objTypes: 
+  isFading: 0
+  et: 0
