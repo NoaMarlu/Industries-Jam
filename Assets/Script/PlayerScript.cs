@@ -1,11 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Burst.CompilerServices;
 using UnityEngine;
 
 public class PlayerScript : MonoBehaviour
 {
+    static public PlayerScript instance;
 
-    //上下左右の移動
+    public Vector3 ConnectPosition = Vector3.zero;
+
+    public List<BuckBooster> buckBoosters = new List<BuckBooster>();
+    static public int BuckBoosterCount;
+
+    private void Awake()
+    {
+        instance = this;
+    }
+
+    //Flash
+    private bool FlashCount;//点滅してる間はtrue
+    private float FlashSpeed = 0.3f;//点滅が切り替えする時間
+    private float FlashTimer;
+    private float FlashTimerUpdate;
+    public float FlashTimeUpdate = 0.5f;//点滅する時間
+    public Renderer FlashObject;
+
+    //Move
     [SerializeField]
     private float SideMove = 10.0f;
     [SerializeField]
@@ -13,10 +33,39 @@ public class PlayerScript : MonoBehaviour
 
     void Start()
     {
+        //Flash
+        FlashCount = false;
+        FlashTimer = 0;
+        FlashTimerUpdate = 0;
     }
     void Update()
     {
+        FlashTimerUpdate += Time.deltaTime;
         Move();
+
+        if (FlashCount == true)
+        {
+            Flash();
+            if (FlashTimer > FlashTimeUpdate)
+            {
+                FlashCount = false;
+                FlashObject.enabled = true;
+            }
+        }//End if
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+
+        BuckBooster script = collision.GetComponent<BuckBooster>();
+        if (script != null)
+        {
+            if (buckBoosters.Count <= 0)
+            {
+                buckBoosters.Add(script);
+            }
+            
+        }
     }
 
     void Move()
@@ -38,8 +87,23 @@ public class PlayerScript : MonoBehaviour
             this.transform.position -= LenghtMove * Time.deltaTime * transform.up;
         }
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+    void Flash()
     {
+        var FlashSpeed = Mathf.Repeat(FlashTimerUpdate, this.FlashSpeed);
+        FlashObject.enabled = FlashSpeed >= this.FlashSpeed * 0.5f;
+        FlashTimer += Time.deltaTime;
+    }
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (FlashCount == false)
+        {
+            if (collision.gameObject.name == "Enemy")
+            {
+                Destroy(collision.gameObject);
+                FlashTimer = 0;
+                FlashCount = true;
+            }
+        }//End if
     }
 
 }

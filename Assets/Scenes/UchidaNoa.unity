@@ -153,7 +153,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 7
 --- !u!61 &919805775
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -336,6 +336,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.07, y: 0.09}
   m_EdgeRadius: 0
+--- !u!212 &919805783 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 1286135691277395804, guid: ad273b00df9fc474e99bebb23bc46f78, type: 3}
+  m_PrefabInstance: {fileID: 1286135691576178704}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &1191220606 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 4537144054898184032, guid: f512d11cf593c2644868aea224806697, type: 3}
+  m_PrefabInstance: {fileID: 151698966623232419}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1797782416
 GameObject:
   m_ObjectHideFlags: 0
@@ -372,7 +382,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 1, g: 1, b: 1, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -432,12 +442,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 407762409475197580, guid: f512d11cf593c2644868aea224806697, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.20000003
+      objectReference: {fileID: 0}
+    - target: {fileID: 407762409475197580, guid: f512d11cf593c2644868aea224806697, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.20000003
+      objectReference: {fileID: 0}
+    - target: {fileID: 407762409475197580, guid: f512d11cf593c2644868aea224806697, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.005
+      value: 0.004999996
       objectReference: {fileID: 0}
     - target: {fileID: 407762409475197580, guid: f512d11cf593c2644868aea224806697, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.212
+      value: 0.21200009
       objectReference: {fileID: 0}
     - target: {fileID: 407762409475197580, guid: f512d11cf593c2644868aea224806697, type: 3}
       propertyPath: m_LocalPosition.z
@@ -496,6 +514,10 @@ PrefabInstance:
       value: 4.79
       objectReference: {fileID: 0}
     - target: {fileID: 4537144054898184032, guid: f512d11cf593c2644868aea224806697, type: 3}
+      propertyPath: ShapeModule.type
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4537144054898184032, guid: f512d11cf593c2644868aea224806697, type: 3}
       propertyPath: UVModule.enabled
       value: 0
       objectReference: {fileID: 0}
@@ -540,6 +562,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4537144054898184032, guid: f512d11cf593c2644868aea224806697, type: 3}
+      propertyPath: VelocityModule.y.scalar
+      value: 2.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 4537144054898184032, guid: f512d11cf593c2644868aea224806697, type: 3}
+      propertyPath: VelocityModule.z.scalar
+      value: -0.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 4537144054898184032, guid: f512d11cf593c2644868aea224806697, type: 3}
       propertyPath: CustomDataModule.enabled
       value: 0
       objectReference: {fileID: 0}
@@ -554,6 +584,10 @@ PrefabInstance:
     - target: {fileID: 4537144054898184032, guid: f512d11cf593c2644868aea224806697, type: 3}
       propertyPath: ClampVelocityModule.enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4537144054898184032, guid: f512d11cf593c2644868aea224806697, type: 3}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1.0000
       objectReference: {fileID: 0}
     - target: {fileID: 4537144054898184032, guid: f512d11cf593c2644868aea224806697, type: 3}
       propertyPath: ExternalForcesModule.enabled
@@ -615,6 +649,22 @@ PrefabInstance:
     - target: {fileID: 1286135691277395802, guid: ad273b00df9fc474e99bebb23bc46f78, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1286135691277395803, guid: ad273b00df9fc474e99bebb23bc46f78, type: 3}
+      propertyPath: FlashCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1286135691277395803, guid: ad273b00df9fc474e99bebb23bc46f78, type: 3}
+      propertyPath: AfterBurner
+      value: 
+      objectReference: {fileID: 1191220606}
+    - target: {fileID: 1286135691277395803, guid: ad273b00df9fc474e99bebb23bc46f78, type: 3}
+      propertyPath: FlashObject
+      value: 
+      objectReference: {fileID: 919805783}
+    - target: {fileID: 1286135691277395804, guid: ad273b00df9fc474e99bebb23bc46f78, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1286135691277395805, guid: ad273b00df9fc474e99bebb23bc46f78, type: 3}
       propertyPath: m_RootOrder
