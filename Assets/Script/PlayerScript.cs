@@ -17,6 +17,8 @@ public class PlayerScript : MonoBehaviour
         instance = this;
     }
 
+    public float Energy=100;
+    public float DisEnergyPalam=20;
     //Flash
     private bool FlashCount;//ì_ñ≈ÇµÇƒÇÈä‘ÇÕtrue
     private float FlashSpeed = 0.3f;//ì_ñ≈Ç™êÿÇËë÷Ç¶Ç∑ÇÈéûä‘
@@ -167,19 +169,28 @@ public class PlayerScript : MonoBehaviour
             }
         }
     }//End void
+    public void OnDamage()
+    {
+        FlashTimer = 0;
+        FlashCount = true;
+        ShakeCount = true;
+        Energy -= DisEnergyPalam;
+        GageController.instance.OnDamage(DisEnergyPalam);
+    }
 
-    private void OnCollisionStay2D(Collision2D collision)
+    void OnCollisionStay2D(Collision2D collision)
+    {
+        if (FlashCount == false)
         {
-            if (FlashCount == false)
+            if (collision.gameObject.name == "Enemy")
             {
-                if (collision.gameObject.name == "Enemy")
-                {
-                    Destroy(collision.gameObject);
-                    FlashTimer = 0;
-                    FlashCount = true;
-                ShakeCount = true;
-                }
-            }//End if
-        }//End Collision
+
+            }
+        }//End if
+        if (collision.gameObject.name == "item")
+        {
+            //Energy += DisEnergyPalam;
+        }
+    }//End Collision
 
     }
