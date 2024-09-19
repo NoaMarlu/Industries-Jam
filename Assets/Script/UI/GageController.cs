@@ -7,6 +7,8 @@ using UnityEditor;
 
 public class GageController : MonoBehaviour
 {
+    [SerializeField]private Vector3 startPoint;
+
     [SerializeField] private GameObject oldGageObj;
 
     [SerializeField] private GameObject gage;
@@ -33,7 +35,6 @@ public class GageController : MonoBehaviour
 
     private float oldGage;
 
-    private Vector3 startPoint;
 
     private Vector3 rotatePosition;
 
@@ -67,7 +68,7 @@ public class GageController : MonoBehaviour
         // ダメージを受けた時の処理
         if (damageEnable)
         {
-            DamageUpdate();
+            //DamageUpdate();
         }
 
         float widht = maxWidht * (currentGage / maxButtery);
@@ -104,8 +105,10 @@ public class GageController : MonoBehaviour
 
         // バッテリーバーを揺らす処理
         if (timer < wateTime)
+        {
             gameObject.transform.position = new Vector3(Mathf.Lerp(startPoint.x, rotatePosition.x, easePos),
                 Mathf.Lerp(startPoint.y, rotatePosition.y, easePos), startPoint.z);
+        }
         else
             gameObject.transform.position = rotatePosition;
     }
