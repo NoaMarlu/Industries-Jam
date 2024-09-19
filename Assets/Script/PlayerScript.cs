@@ -20,8 +20,8 @@ public class PlayerScript : MonoBehaviour
         instance = this;
     }
 
-    public float Energy=100;
-    public float DisEnergyPalam=20;
+    public float Energy = 100;
+    public float DisEnergyPalam = 20;
     //Flash
     private bool FlashCount;//ì_ñ≈ÇµÇƒÇÈä‘ÇÕtrue
     private float FlashSpeed = 0.3f;//ì_ñ≈Ç™êÿÇËë÷Ç¶Ç∑ÇÈéûä‘
@@ -42,7 +42,7 @@ public class PlayerScript : MonoBehaviour
     private float ShakeTimer;
     private bool ShakeCount;
     private float ShakeTimerUpdate;
-    public float ShakeTimeUpdate=3.0f;
+    public float ShakeTimeUpdate = 3.0f;
 
 
     //Move
@@ -61,7 +61,7 @@ public class PlayerScript : MonoBehaviour
         CameraObject = GameObject.Find("Main Camera");
         ShakeTimerUpdate = 0;
         ShakeBool = false;
-        ShakeTimer= 0;
+        ShakeTimer = 0;
         ShakeCount = false;
     }
     void Update()
@@ -147,7 +147,7 @@ public class PlayerScript : MonoBehaviour
                 ShakeBool = true;
             }
         }
-        if (ShakeBool== true)
+        if (ShakeBool == true)
         {
             CameraObject.transform.position = new Vector3(0, 0, -10);
             ShakeTimer += Time.deltaTime;
@@ -182,7 +182,6 @@ public class PlayerScript : MonoBehaviour
         }
     }//End Collision
 
-    }
     public List<BackBooster> GetBackBoosters()
     {
         return backBoosters;
@@ -195,5 +194,4 @@ public class PlayerScript : MonoBehaviour
     {
         return downBoosters;
     }
-
 }
