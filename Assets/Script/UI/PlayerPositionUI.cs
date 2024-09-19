@@ -38,5 +38,5 @@ public class PlayerPositionUI : MonoBehaviour
     }
 
     // Œ»İ‚Ì‹——£‚ğİ’è
-    void SetDistace(float dist) { distance = dist; }
+    public void SetDistace(float dist) { distance = dist; }
 }

@@ -24,12 +24,12 @@ public class SpeedController : MonoBehaviour
     //}
 
     // テキストに反映
-    void OnText(int s)
+    public void OnText(int s)
     {
         speedText.text = s.ToString() + "km";
     }
 
-    void SetSpeed(int s) { speed = s; OnText(s); }
+    public void SetSpeed(int s) { speed = s; OnText(s); }
 
-    int GetSpeed() { return speed; }
+    public int GetSpeed() { return speed; }
 }
