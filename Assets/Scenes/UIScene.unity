@@ -583,6 +583,32 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 94404589e08fd214f866f1c66d1fecca, type: 3}
+--- !u!1 &8114385635142264673 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8114385635390188126, guid: 94404589e08fd214f866f1c66d1fecca, type: 3}
+  m_PrefabInstance: {fileID: 8114385635142264672}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8114385635142264674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8114385635142264673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627542fafebfa7f469a610997ffcadb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPause: 0
+  startPos: -1159
+  endPos: -711
+  wateTime: 1
+  isAutoInitialize: 1
+  loop: 0
+  timer: 0
+  isDecision: 0
+  isReverse: 0
 --- !u!1001 &8505443371041662248
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -593,6 +619,10 @@ PrefabInstance:
     - target: {fileID: 1514942049907149929, guid: bc3b577d544203b4aa1c57bef98115b0, type: 3}
       propertyPath: m_Name
       value: DistanceMata
+      objectReference: {fileID: 0}
+    - target: {fileID: 1514942049907149929, guid: bc3b577d544203b4aa1c57bef98115b0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6405546369150440832, guid: bc3b577d544203b4aa1c57bef98115b0, type: 3}
       propertyPath: m_Pivot.x
