@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Gold : MonoBehaviour
 {
-
+    public GameObject obstaclePrefab; // Prefabをインスペクターで指定
     public Sprite usualSprite; // 画像（Sprite）
     public float spawnInterval = 3.0f; // 一定時間ごとのスポーン間隔
     public float minSpawnInterval = 3.0f; // スポーン間隔の最小値
@@ -31,28 +31,36 @@ public class Gold : MonoBehaviour
     }
     void SpawnObject()
     {
-        GameObject newObject = new GameObject("UsualObject");
-        // 子オブジェクトとしてスプライト表示部分を作成
-        GameObject spriteObject = new GameObject("SpriteObject");
-        spriteObject.transform.parent = newObject.transform; // 親オブジェクトに設定
+        // obstaclePrefabから新しいオブジェクトを生成
+        GameObject newObject = Instantiate(obstaclePrefab);
 
-        // SpriteRendererを子オブジェクトに追加
-        SpriteRenderer renderer = spriteObject.AddComponent<SpriteRenderer>();
-        renderer.sprite = usualSprite; // 画像を適用
-
-        // 画面の右端から生成（Y座標はランダム）
+        // 生成位置を設定（画面の右端から生成、Y座標はランダム）
         newObject.transform.position = new Vector3(spawnX, Random.Range(-4.0f, 4.0f), 0);
 
-        newObject.AddComponent<Rigidbody2D>().gravityScale = 0;
-        newObject.AddComponent<BoxCollider2D>().isTrigger = true;
+        // Rigidbody2D と Collider2D が Prefab に含まれていることを確認する
+        Rigidbody2D rb = newObject.GetComponent<Rigidbody2D>();
+        if (rb == null)
+        {
+            rb = newObject.AddComponent<Rigidbody2D>();
+            rb.gravityScale = 0;
+        }
 
-        // 各オブジェクトごとにランダムな移動方向を設定
+        BoxCollider2D collider = newObject.GetComponent<BoxCollider2D>();
+        if (collider == null)
+        {
+            collider = newObject.AddComponent<BoxCollider2D>();
+            collider.isTrigger = true;
+        }
+
+        // ランダムな移動方向を設定
         Vector3 direction = GetRandomDirection();
 
         // ランダムな回転速度を設定
         float rotationSpeed = Random.Range(50.0f, 200.0f); // 回転速度
-        // オブジェクトを移動させる
-        StartCoroutine(MoveObject(newObject, spriteObject, direction, rotationSpeed));
+
+        // オブジェクトを移動させるコルーチンを開始
+        StartCoroutine(MoveObject(newObject, direction, rotationSpeed));
+
         // 次のスポーンまでの時間をランダムに設定
         currentSpawnInterval = Random.Range(minSpawnInterval, maxSpawnInterval);
         Invoke("SpawnObject", currentSpawnInterval); // 次のオブジェクトをランダムな間隔でスポーン
@@ -76,13 +84,13 @@ public class Gold : MonoBehaviour
         }
     }
 
-    IEnumerator MoveObject(GameObject obj, GameObject spriteObj, Vector3 direction, float rotationSpeed)
+    IEnumerator MoveObject(GameObject obj, Vector3 direction, float rotationSpeed)
     {
         while (obj != null)
         {
-            obj.transform.Translate(direction * speed * Time.deltaTime);
+            obj.transform.Translate(direction * speed * Time.deltaTime, Space.World);
             // スプライトオブジェクトのみを回転
-            spriteObj.transform.Rotate(0, 0, rotationSpeed * Time.deltaTime);
+            obj.transform.Rotate(0, 0, rotationSpeed * Time.deltaTime, Space.Self);
 
             // 画面外に出たら削除
             if (obj.transform.position.x < DestroyX)
@@ -93,16 +101,5 @@ public class Gold : MonoBehaviour
         }
     }
 
-    // 当たり判定処理を同じクラス内に追加
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        // プレイヤーに接触した場合の処理
-        if (other.CompareTag("Player"))
-        {
-            Debug.Log("Player hit!");
-            // プレイヤーが破壊される処理を書く場所
-            //Destroy(gameObject); // 自分自身を破壊
-        }
-    }
-
+   
 }
