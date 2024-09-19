@@ -45,6 +45,7 @@ public class UpBooster : ItemScript
                 //プレイヤーのリストに登録
                 PlayerScript.instance.GetUpBoosters().Add(this);
                 number = PlayerScript.instance.GetUpBoosters().Count;
+                GameSystem.Instance.AddSpeed(speed);
                 hit = true;
             }
         }

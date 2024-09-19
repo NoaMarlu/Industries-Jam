@@ -44,6 +44,7 @@ public class DownBooster : ItemScript
                 //プレイヤーのリストに登録
                 PlayerScript.instance.GetDownBoosters().Add(this);
                 number = PlayerScript.instance.GetDownBoosters().Count;
+                GameSystem.Instance.AddSpeed(speed);
                 hit = true;
             }
         }
