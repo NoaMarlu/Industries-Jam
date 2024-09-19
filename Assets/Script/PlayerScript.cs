@@ -5,15 +5,18 @@ using UnityEngine;
 
 public class PlayerScript : MonoBehaviour
 {
+    //時間がないためインスタンス化
     static public PlayerScript instance;
 
-    public Vector3 ConnectPosition = Vector3.zero;
-
-    public List<BuckBooster> buckBoosters = new List<BuckBooster>();
-    static public int BuckBoosterCount;
+    //アイテムのリスト
+    private List<BackBooster> backBoosters = new List<BackBooster>();
+    private List<UpBooster> upBoosters = new List<UpBooster>();
+    private List<DownBooster> downBoosters = new List<DownBooster>();
+    //static private int BuckBoosterCount;
 
     private void Awake()
     {
+        //インスタンス生成
         instance = this;
     }
 
@@ -87,20 +90,6 @@ public class PlayerScript : MonoBehaviour
                 FlashObject.enabled = true;
             }
         }//End if
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-
-        BuckBooster script = collision.GetComponent<BuckBooster>();
-        if (script != null)
-        {
-            if (buckBoosters.Count <= 0)
-            {
-                buckBoosters.Add(script);
-            }
-            
-        }
     }
 
     void Move()
@@ -194,3 +183,17 @@ public class PlayerScript : MonoBehaviour
     }//End Collision
 
     }
+    public List<BackBooster> GetBackBoosters()
+    {
+        return backBoosters;
+    }
+    public List<UpBooster> GetUpBoosters()
+    {
+        return upBoosters;
+    }
+    public List<DownBooster> GetDownBoosters()
+    {
+        return downBoosters;
+    }
+
+}
