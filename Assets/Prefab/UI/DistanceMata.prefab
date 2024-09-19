@@ -175,6 +175,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPos: {fileID: 8505443372373514028}
   appearanceDistance: 100
+  fade: {fileID: 5080767879420893778}
   distance: 0
 --- !u!1 &8505443372373514027
 GameObject:

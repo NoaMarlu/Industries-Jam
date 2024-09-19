@@ -56,7 +56,7 @@ public class GageController : MonoBehaviour
             RectTransform rectTransform = oldGageObj.GetComponent<RectTransform>();
             rectTransform.sizeDelta = new Vector2(maxWidht, rectTransform.sizeDelta.y);
         }
-        startPoint = gameObject.transform.position;
+        //startPoint = gameObject.transform.position;
         currentGage = maxButtery;
     }
 
@@ -68,7 +68,7 @@ public class GageController : MonoBehaviour
         // ダメージを受けた時の処理
         if (damageEnable)
         {
-            //DamageUpdate();
+            DamageUpdate();
         }
 
         float widht = maxWidht * (currentGage / maxButtery);
@@ -88,8 +88,8 @@ public class GageController : MonoBehaviour
         {
             RectTransform rectTransform = oldGageObj.GetComponent<RectTransform>();
 
-            float oldWidht = rectTransform.sizeDelta.x - decreaseSpeed;
-            rectTransform.sizeDelta = new Vector2(Mathf.Clamp(oldWidht, widht, maxButtery), rectTransform.sizeDelta.y);
+            float oldWidht = rectTransform.sizeDelta.x - decreaseSpeed * Time.deltaTime;
+            rectTransform.sizeDelta = new Vector2(Mathf.Clamp(oldWidht, widht, maxWidht), rectTransform.sizeDelta.y);
         }
     }
 
@@ -106,11 +106,11 @@ public class GageController : MonoBehaviour
         // バッテリーバーを揺らす処理
         if (timer < wateTime)
         {
-            gameObject.transform.position = new Vector3(Mathf.Lerp(startPoint.x, rotatePosition.x, easePos),
+            gameObject.transform.localPosition = new Vector3(Mathf.Lerp(startPoint.x, rotatePosition.x, easePos),
                 Mathf.Lerp(startPoint.y, rotatePosition.y, easePos), startPoint.z);
         }
         else
-            gameObject.transform.position = rotatePosition;
+            gameObject.transform.localPosition = rotatePosition;
     }
 
     private IEnumerator DoDaamge()

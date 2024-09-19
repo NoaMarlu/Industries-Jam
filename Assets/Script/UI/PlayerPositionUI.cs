@@ -8,6 +8,8 @@ public class PlayerPositionUI : MonoBehaviour
 
     [SerializeField] private float appearanceDistance = 100;// 敵が出現するまでの距離
 
+    [SerializeField] private Fade fade; 
+
     private float startPos = 0;
 
     // 現在の距離
@@ -30,11 +32,25 @@ public class PlayerPositionUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        float rate = 0;
         // 割合
-        float rate = distance / appearanceDistance;
+        if (GameSystem.Instance == null)
+        {
+            rate = distance / appearanceDistance;
+        }
+        else
+        {
+            rate = GameSystem.Instance.GamePosition / GameSystem.Instance.GetMaxBossDistance();
+        }
 
         // UIに反映
         transform.position = new Vector2(Mathf.Lerp(startPos, enemyPos.position.x, rate), transform.position.y);
+
+        if (rate < 1) return;
+        if (fade.GetFadeType() != Fade.Type.Out) return;
+
+        // フェード処理
+        fade.SetIsReverse();
     }
 
     // 現在の距離を設定

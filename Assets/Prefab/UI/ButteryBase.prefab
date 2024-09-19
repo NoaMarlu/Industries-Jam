@@ -325,7 +325,7 @@ MonoBehaviour:
   startPoint: {x: -711, y: 446, z: 0}
   oldGageObj: {fileID: 8114385635172684242}
   gage: {fileID: 8114385634552808450}
-  decreaseSpeed: 1
+  decreaseSpeed: 150
   decreaseInterval: 1
   swayCondition: 40
   swayRadius: 2.5
