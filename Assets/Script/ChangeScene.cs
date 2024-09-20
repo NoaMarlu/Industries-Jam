@@ -6,10 +6,18 @@ using UnityEngine.SceneManagement;
 
 public class ChangeScene : MonoBehaviour
 {
+    public Image spaceTitle;
+    public Image spaceResult;
+
+    bool loadOnceTitle = false;
+    bool loadOnceGame = false;
+    bool loadOnceResult = false;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        loadOnceTitle = false;
+        loadOnceResult = false;
     }
 
     // Update is called once per frame
@@ -18,23 +26,36 @@ public class ChangeScene : MonoBehaviour
         switch(SceneManager.GetActiveScene().name)
         {
             case "TitleScene":
+                ButtonPush bpTitle = spaceTitle.GetComponent<ButtonPush>();
                 if (Input.GetKeyDown("space"))
                 {
-                    SceneManager.LoadScene("GameScene", LoadSceneMode.Single);
+                    bpTitle.enabled = true;
                 }
-                break;
+                if (bpTitle.GetIsFinish()&& !loadOnceTitle)
+                {
+                    loadOnceTitle = true;
+                    FadeManager.Instance.LoadScene("GameScene", 0.3f);
+                }
+                    break;
 
             case "GameScene":
-                if (PlayerScript.instance.Energy < 0/*||Boss.instance.BossDie==true*/) 
+                if (PlayerScript.instance.Energy < 0&& !loadOnceGame) 
                 {
-                    SceneManager.LoadScene("ResultScene", LoadSceneMode.Single);
+                    FadeManager.Instance.LoadScene("ResultScene", 0.3f);
+                    loadOnceGame = true;
                 }
                 break;
 
             case "ResultScene":
+                ButtonPush bpResult = spaceResult.GetComponent<ButtonPush>();
                 if (Input.GetKeyDown("space"))
                 {
-                    SceneManager.LoadScene("TitleScene", LoadSceneMode.Single);
+                    bpResult.enabled = true;
+                }
+                if (bpResult.GetIsFinish() && !loadOnceResult)
+                {
+                    loadOnceResult = true;
+                    FadeManager.Instance.LoadScene("TitleScene", 0.3f);
                 }
                 break;
         }

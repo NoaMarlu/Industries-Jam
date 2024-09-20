@@ -19,6 +19,5 @@ public class GameClearLogoRenderer : MonoBehaviour
     void Update()
     {
         gameClearLogo.SetActive(GameSystem.Instance.isClear);
-       
     }
 }
