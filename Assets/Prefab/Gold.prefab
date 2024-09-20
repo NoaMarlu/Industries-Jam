@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4329274643153456853}
   - component: {fileID: 6609510481538846387}
-  - component: {fileID: 4483061184535792464}
   - component: {fileID: 3756154280645109707}
   - component: {fileID: 1765718708837438116}
+  - component: {fileID: 1863133379073350998}
   m_Layer: 0
   m_Name: Gold
   m_TagString: Untagged
@@ -29,8 +29,8 @@ Transform:
   m_GameObject: {fileID: 6374683832138384045}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.049605817, y: 0.7459843, z: -0.08537932}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -56,32 +56,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &4483061184535792464
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6374683832138384045}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.39, y: 2.36}
-    newSize: {x: 2.39, y: 2.36}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 2.18, y: 2}
-  m_EdgeRadius: 0
 --- !u!212 &3756154280645109707
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -123,7 +97,7 @@ SpriteRenderer:
   m_SortingLayerID: -518937521
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: dcf09f74911472d4c9cc336fef63be47, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6fb2abafc95d8694586da83ed41640a3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -151,3 +125,19 @@ MonoBehaviour:
   ItemLeft: {fileID: 2290012239016048324, guid: 1d2e6eb375c9c754bb674cd08be1606c, type: 3}
   ItemRight: {fileID: 729194021543614878, guid: 98cc920a109297d4e9a5de1d32c3effd, type: 3}
   obstale: {fileID: 0}
+--- !u!58 &1863133379073350998
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6374683832138384045}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.2

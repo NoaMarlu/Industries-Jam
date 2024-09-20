@@ -170,6 +170,8 @@ public class PlayerScript : MonoBehaviour
     }//End void
     public void OnDamage()
     {
+        //オーディオ再生
+        PlaySound(hitclip);
         FlashTimer = 0;
         FlashCount = true;
         ShakeCount = true;

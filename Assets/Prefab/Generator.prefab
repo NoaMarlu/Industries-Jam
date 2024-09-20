@@ -47,9 +47,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obstaclePrefab: {fileID: 6468184448232687639, guid: b44dbb99860ca7d4096d44dd872f891d, type: 3}
   usualSprite: {fileID: 21300000, guid: 16f47eb3210d0bc4683ca84527389159, type: 3}
-  spawnInterval: 1
-  minSpawnInterval: 3
-  maxSpawnInterval: 5
+  spawnInterval: 0.6
+  minSpawnInterval: 4
+  maxSpawnInterval: 7
   spawnDuration: 5
   emptyDuration: 3
   speed: 2
@@ -64,7 +64,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7715075576883338355}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e3932e5fbfb802941a71f63dbf5bcfff, type: 3}
   m_Name: 

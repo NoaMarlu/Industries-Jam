@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5e5d5935ce1fae48993410a84251885, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bossSprite: {fileID: 21300000, guid: f214074b369371345bc266bdf75ac317, type: 3}
+  bossSprite: {fileID: 21300000, guid: 2843c272aee4fc241a69cb96adaed8f5, type: 3}
   initialSpeed: 5
   ellipseSpeed: 2
   ellipseWidth: 2
@@ -52,4 +52,3 @@ MonoBehaviour:
   leftMoveDistance: 3
   BossDie: 0
   spawnX: 25.53
-  BossDieclip: {fileID: 8300000, guid: 4ed4c03807f3ab14f97f13a42bdcbef2, type: 3}

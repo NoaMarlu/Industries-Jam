@@ -47,7 +47,7 @@ MonoBehaviour:
   BackBoosterPrefab: {fileID: 3090460160123365186, guid: 1bf5b3c5f02f2f545a8e43988d00eb3a, type: 3}
   UpBoosterPrefab: {fileID: 2290012239016048324, guid: 1d2e6eb375c9c754bb674cd08be1606c, type: 3}
   DownBoosterPrefab: {fileID: 729194021543614878, guid: 98cc920a109297d4e9a5de1d32c3effd, type: 3}
-  spawnInterval: 6
+  spawnInterval: 2
   moveSpeed: 5
   spawnDistance: 40
   spawnRange: 15
