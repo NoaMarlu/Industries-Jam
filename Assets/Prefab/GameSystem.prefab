@@ -45,7 +45,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BaseSpeed: 5
-  MaxBossDistance: 1000
+  MaxBossDistance: 3000
   GamePosition: 0
+  disSpeed: 5
   boss: {fileID: 1049582544618686807, guid: dd0432485957ce647b203f39ff2f6603, type: 3}
   isBossActive: 0
+  ItemGet: 0
+  isClear: 0

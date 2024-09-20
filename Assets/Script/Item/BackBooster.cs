@@ -10,7 +10,7 @@ public class BackBooster : ItemScript
     [SerializeField] private float speed;
     [SerializeField] private float energy;
 
-    private float offset = 1;
+    private float offset = 0.5f;
 
     private void Start()
     {
@@ -24,7 +24,7 @@ public class BackBooster : ItemScript
         //ÉvÉåÉCÉÑÅ[éÊìæéû
         if (hit)
         {
-            transform.position = new Vector3(PlayerScript.instance.transform.position.x - number,
+            transform.position = new Vector3(PlayerScript.instance.transform.position.x - number * offset,
                                               PlayerScript.instance.transform.position.y,
                                               PlayerScript.instance.transform.position.z - offset);
         }

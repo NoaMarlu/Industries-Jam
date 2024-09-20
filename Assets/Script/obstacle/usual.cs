@@ -36,7 +36,7 @@ public class usual : MonoBehaviour
     {
         // 時間経過に応じてスピードを増加
         timeElapsed += Time.deltaTime;
-        speed += speedIncreaseRate * Time.deltaTime * (GameSystem.Instance.BaseSpeed*0.05f);
+        speed += speedIncreaseRate * Time.deltaTime * (GameSystem.Instance.BaseSpeed*0.06f);
     }
 
     // 生成サイクル（生成期間と空白期間の繰り返し）

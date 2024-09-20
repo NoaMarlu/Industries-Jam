@@ -24,8 +24,8 @@ public class Background0Mover : MonoBehaviour
         //ƒJƒƒ‰‚Ì”ÍˆÍ‚ğæ“¾
         m_cameraRectMin = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, Camera.main.transform.position.z));
 
-        m_offsetSpeed.x = -0.2f;
-        m_accelSpeed = -0.1f;
+        m_offsetSpeed.x = -2f;
+        m_accelSpeed = -1f;
     }
 
     void Update()

@@ -13,7 +13,7 @@ public class DownBooster : ItemScript
     [SerializeField] private float speed;
     [SerializeField] private float energy;
 
-    private Vector3 offset = new Vector3(-0.3f, -1.3f, 1.0f);
+    private Vector3 offset = new Vector3(0.5f, -0.5f, 0.1f);
 
     private void Start()
     {
@@ -27,7 +27,7 @@ public class DownBooster : ItemScript
         //ÉvÉåÉCÉÑÅ[éÊìæéû
         if (hit)
         {
-            transform.position = new Vector3(PlayerScript.instance.transform.position.x - number + offset.x,
+            transform.position = new Vector3(PlayerScript.instance.transform.position.x - number * offset.x,
                                               PlayerScript.instance.transform.position.y + offset.y,
                                               PlayerScript.instance.transform.position.z + offset.z);
             GameSystem.Instance.ItemGet = true;

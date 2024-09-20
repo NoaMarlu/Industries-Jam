@@ -12,6 +12,6 @@ public class AfterBurner : MonoBehaviour
 
     public void ResetBuner()
     {
-        transform.position -= new Vector3(1, 0, 0);
+        transform.position -= new Vector3(0.5f, 0, 0);
     }
 }
