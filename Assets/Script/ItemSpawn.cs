@@ -20,14 +20,15 @@ public class ItemSpawn : MonoBehaviour
     public GameObject DownBoosterPrefab;
 
     //スポーンするまでの時間
-    [SerializeField] private float spawnInterval;
-    [SerializeField] private float moveSpeed;//アイテムが移動する速度
+    [SerializeField,Label("アイテム生成インターバル(秒)")] private float spawnInterval;
+    [SerializeField, Label("アイテムが移動する速度")] private float moveSpeed;
 
-    [SerializeField] private float spawnDistance;//プレイヤーどれだけ離れた位置から出現するか
-    [SerializeField] private float spawnRange;   //アイテムの横方向のランダム 
+    [SerializeField, Label("プレイヤーからの距離")] private float spawnDistance;//プレイヤーからどれだけ離れた位置から出現するか
+    [SerializeField, Label("生成時最大X座標")] private float spawnRange;   //アイテムの横方向のランダム 
 
-    [SerializeField] private int maxspawn;   //アイテムの最大スポーン数
-    [SerializeField] private int minspawn;   //アイテムの最小スポーン数 
+    [SerializeField, Label("アイテム最大数")] private int maxspawn;
+    [SerializeField, Label("アイテム最小数")] private int minspawn;
+
     private float spawntime = 0;
     private Quaternion spawnRotation = Quaternion.Euler(0, 0, 90);
     void Update()

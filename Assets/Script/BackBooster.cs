@@ -5,13 +5,21 @@ using UnityEngine;
 
 public class BackBooster : ItemScript
 {
+    //audio
     public AudioClip collectedClip;
+    protected AudioSource audioSource;
 
     //ステータス
     [SerializeField] private float speed;
     [SerializeField] private float energy;
 
     private float offset = 1;
+
+    private void Start()
+    {
+        //オーディオ準備
+        audioSource = GetComponent<AudioSource>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -44,7 +52,7 @@ public class BackBooster : ItemScript
             if (script != null)
             {
                 //オーディオ再生
-                script.PlaySound(collectedClip);
+                audioSource.PlayOneShot(collectedClip);
 
                 //プレイヤーのリストに登録
                 PlayerScript.instance.GetBackBoosters().Add(this);

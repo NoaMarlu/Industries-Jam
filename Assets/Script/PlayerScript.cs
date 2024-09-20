@@ -15,6 +15,7 @@ public class PlayerScript : MonoBehaviour
 
     //audio
     private AudioSource audioSource;
+    public AudioClip hitclip;
 
     public float Energy = 100;
     public float DisEnergyPalam = 20;
@@ -180,7 +181,7 @@ public class PlayerScript : MonoBehaviour
             if (collision.gameObject.name == "Enemy")
             {
                 //オーディオ再生
-
+                PlaySound(hitclip);
 
                 Destroy(collision.gameObject);
                 FlashTimer = 0;
