@@ -12,6 +12,8 @@ public class GameSystem : MonoBehaviour
     public float disSpeed=5.0f;//被弾でスピード下がる
     public Boss boss; // ボスの参照
     public bool isBossActive = false; // ボスがアクティブかどうか
+
+    public bool isClear = false;
     //public float 
     void Awake()
     {
