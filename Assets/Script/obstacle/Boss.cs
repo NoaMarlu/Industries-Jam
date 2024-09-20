@@ -30,9 +30,13 @@ public class Boss : MonoBehaviour
         // SpriteRendererを追加してスプライトを設定
         spriteRenderer = gameObject.AddComponent<SpriteRenderer>();
         spriteRenderer.sprite = bossSprite;
+        spriteRenderer.sortingLayerName = "Enemy";
+
         // Rigidbody2Dを追加（重力は使用しない）
         Rigidbody2D rb = gameObject.AddComponent<Rigidbody2D>();
         rb.isKinematic = true;
+
+
 
         // Collider2Dを追加（当たり判定用）
         BoxCollider2D collider = gameObject.AddComponent<BoxCollider2D>();
