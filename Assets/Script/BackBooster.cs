@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class BackBooster : ItemScript
 {
+    public AudioClip collectedClip;
+
     //ステータス
     [SerializeField] private float speed;
     [SerializeField] private float energy;
