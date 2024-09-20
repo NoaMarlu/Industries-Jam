@@ -74,6 +74,7 @@ public class PlayerScript : MonoBehaviour
     }
     void Update()
     {
+        SpeedController.instance.SetSpeed((int)GameSystem.Instance.BaseSpeed);
         FlashTimerUpdate += Time.deltaTime;
         Move();
         Stop();

@@ -24,7 +24,7 @@ public class Background0Mover : MonoBehaviour
         //カメラの範囲を取得
         m_cameraRectMin = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, Camera.main.transform.position.z));
 
-        m_offsetSpeed.x = -1.0f;
+        m_offsetSpeed.x = -0.2f;
         m_accelSpeed = -0.1f;
     }
 
@@ -38,6 +38,7 @@ public class Background0Mover : MonoBehaviour
             transform.position = new Vector2((Camera.main.transform.position.x - m_cameraRectMin.x) * 2, transform.position.y);
         }
 
+        m_getParts = GameSystem.Instance.ItemGet;
         // パーツを入手したらスクロール速度を上げる
         if (m_getParts)
         {

@@ -13,6 +13,8 @@ public class GameSystem : MonoBehaviour
     public Boss boss; // ボスの参照
     public bool isBossActive = false; // ボスがアクティブかどうか
 
+    public bool ItemGet = false;
+
     public bool isClear = false;
     //public float 
     void Awake()
@@ -41,6 +43,7 @@ public class GameSystem : MonoBehaviour
     public void DisSpeed()
     {
         BaseSpeed -= disSpeed;
+        if (BaseSpeed <= 0) BaseSpeed = 0;
     }
 
     // Update is called once per frame

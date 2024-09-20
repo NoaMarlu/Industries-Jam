@@ -57,6 +57,7 @@ public class BackBooster : ItemScript
                 number = PlayerScript.instance.GetBackBoosters().Count;
                 GameSystem.Instance.AddSpeed(speed);
                 hit = true;
+                GameSystem.Instance.ItemGet = true;
             }
         }
         
