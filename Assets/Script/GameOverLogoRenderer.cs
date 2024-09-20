@@ -18,13 +18,6 @@ public class GameOverLogoRenderer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isClear == false)
-        {
-            gameOverLogo.SetActive(true);
-        }
-        else
-        {
-            gameOverLogo.SetActive(false);
-        }
+        gameOverLogo.SetActive(!GameSystem.Instance.isClear);
     }
 }

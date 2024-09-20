@@ -24,7 +24,7 @@ public class ChangeScene : MonoBehaviour
                 break;
 
             case "GameScene":
-                if (PlayerScript.instance.Energy<0||Boss.instance.BossDie==true)
+                if (PlayerScript.instance.Energy < 0/*||Boss.instance.BossDie==true*/) 
                 {
                     SceneManager.LoadScene("ResultScene", LoadSceneMode.Single);
                 }

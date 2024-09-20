@@ -31,6 +31,7 @@ public class PlayerScript : MonoBehaviour
     public float Radius = 1.0f;
     //Shake
     private GameObject CameraObject;
+    private Vector3 CameraPos;
     private bool ShakeBool;//‚±‚ê‚ªtrue‚¾‚ÆƒJƒƒ‰‚Ìx‚ª1‚¸‚ê‚é
     public float ShakeTime = 0.3f;
     public float ShakeSizeX = 1;
@@ -84,6 +85,7 @@ public class PlayerScript : MonoBehaviour
             {
                 ShakeTimerUpdate = 0;
                 ShakeCount = false;
+                CameraObject.transform.position = CameraPos;
             }
         }
 
@@ -169,6 +171,7 @@ public class PlayerScript : MonoBehaviour
         FlashTimer = 0;
         FlashCount = true;
         ShakeCount = true;
+        CameraPos= CameraObject.transform.position;
         Energy -= DisEnergyPalam;
         GageController.instance.OnDamage(DisEnergyPalam);
     }

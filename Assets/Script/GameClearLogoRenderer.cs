@@ -18,13 +18,7 @@ public class GameClearLogoRenderer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isClear == true)
-        {
-            gameClearLogo.SetActive(true);
-        }
-        else
-        {
-            gameClearLogo.SetActive(false);
-        }
+        gameClearLogo.SetActive(GameSystem.Instance.isClear);
+       
     }
 }
