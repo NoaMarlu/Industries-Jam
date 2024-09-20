@@ -38,6 +38,7 @@ public class Boss : MonoBehaviour
         BoxCollider2D collider = gameObject.AddComponent<BoxCollider2D>();
         collider.isTrigger = true; // トリガーとして機能
         isBossActivated = true;
+
     }
     public void SpawnBoss()
     {

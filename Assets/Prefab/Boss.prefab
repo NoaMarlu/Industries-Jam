@@ -50,4 +50,6 @@ MonoBehaviour:
   ellipseWidth: 2
   ellipseHeight: 4
   leftMoveDistance: 3
+  BossDie: 0
   spawnX: 25.53
+  BossDieclip: {fileID: 8300000, guid: 4ed4c03807f3ab14f97f13a42bdcbef2, type: 3}

@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.Burst.CompilerServices;
 using UnityEngine;
 
 public class BackBooster : ItemScript
@@ -56,6 +53,7 @@ public class BackBooster : ItemScript
 
                 //プレイヤーのリストに登録
                 PlayerScript.instance.GetBackBoosters().Add(this);
+                AfterBurner.Instance.ResetBuner();
                 number = PlayerScript.instance.GetBackBoosters().Count;
                 GameSystem.Instance.AddSpeed(speed);
                 hit = true;
