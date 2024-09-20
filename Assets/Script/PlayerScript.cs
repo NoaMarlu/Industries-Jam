@@ -12,13 +12,9 @@ public class PlayerScript : MonoBehaviour
     private List<BackBooster> backBoosters = new List<BackBooster>();
     private List<UpBooster> upBoosters = new List<UpBooster>();
     private List<DownBooster> downBoosters = new List<DownBooster>();
-    //static private int BuckBoosterCount;
 
-    private void Awake()
-    {
-        //インスタンス生成
-        instance = this;
-    }
+    //audio
+    private AudioSource audioSource;
 
     //Flash
     private bool FlashCount;//点滅してる間はtrue
@@ -34,12 +30,22 @@ public class PlayerScript : MonoBehaviour
     [SerializeField]
     private float LenghtMove = 5.0f;
 
+    //static private int BuckBoosterCount;
+    private void Awake()
+    {
+        //インスタンス生成
+        instance = this;
+    }
+
     void Start()
     {
         //Flash
         FlashCount = false;
         FlashTimer = 0;
         FlashTimerUpdate = 0;
+
+        //オーディオ準備
+        audioSource = GetComponent<AudioSource>();
     }
     void Update()
     {
@@ -88,6 +94,9 @@ public class PlayerScript : MonoBehaviour
         {
             if (collision.gameObject.name == "Enemy")
             {
+                //オーディオ再生
+
+
                 Destroy(collision.gameObject);
                 FlashTimer = 0;
                 FlashCount = true;
@@ -106,6 +115,12 @@ public class PlayerScript : MonoBehaviour
     public List<DownBooster> GetDownBoosters()
     {
         return downBoosters;
+    }
+
+    //サウンドを再生する
+    public void PlaySound(AudioClip clip)
+    {
+        audioSource.PlayOneShot(clip);
     }
 
 }

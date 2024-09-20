@@ -41,6 +41,9 @@ public class BackBooster : ItemScript
 
             if (script != null)
             {
+                //オーディオ再生
+                script.PlaySound(collectedClip);
+
                 //プレイヤーのリストに登録
                 PlayerScript.instance.GetBackBoosters().Add(this);
                 number = PlayerScript.instance.GetBackBoosters().Count;
