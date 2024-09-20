@@ -94,4 +94,7 @@ public class Boss : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    //ƒ{ƒX‚ª—LŒø‰»‚³‚ê‚Ä‚¢‚é‚©‚Ç‚¤‚©
+    public bool isActive() { return isBossActivated; }
 }

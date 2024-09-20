@@ -27,9 +27,18 @@ public class ChangeScene : MonoBehaviour
             case "GameScene":
                 if (PlayerScript.instance.Energy < 0/*||Boss.instance.BossDie==true*/) 
                 {
+                    GameSystem.Instance.isClear = false;
                     SceneManager.LoadScene("ResultScene", LoadSceneMode.Single);
                 }
-                break;
+                if(Boss.instance.isActive())
+                {
+                    if (Boss.instance.BossDie)
+                    {
+                        GameSystem.Instance.isClear = true;
+                        SceneManager.LoadScene("ResultScene", LoadSceneMode.Single);
+                    }
+                }
+                    break;
 
             case "ResultScene":
                 if (Input.GetKeyDown("space"))
