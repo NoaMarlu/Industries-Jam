@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class UpBooster : ItemScript
 {
+    public AudioClip collectedClip;
+
     //ステータス
     [SerializeField] private float speed;
     [SerializeField] private float energy;
@@ -42,6 +44,9 @@ public class UpBooster : ItemScript
 
             if (script != null)
             {
+                //オーディオ再生
+                script.PlaySound(collectedClip);
+
                 //プレイヤーのリストに登録
                 PlayerScript.instance.GetUpBoosters().Add(this);
                 number = PlayerScript.instance.GetUpBoosters().Count;

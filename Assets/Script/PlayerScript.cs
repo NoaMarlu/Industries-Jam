@@ -12,13 +12,9 @@ public class PlayerScript : MonoBehaviour
     private List<BackBooster> backBoosters = new List<BackBooster>();
     private List<UpBooster> upBoosters = new List<UpBooster>();
     private List<DownBooster> downBoosters = new List<DownBooster>();
-    //static private int BuckBoosterCount;
 
-    private void Awake()
-    {
-        //インスタンス生成
-        instance = this;
-    }
+    //audio
+    private AudioSource audioSource;
 
     public float Energy = 100;
     public float DisEnergyPalam = 20;
@@ -51,6 +47,13 @@ public class PlayerScript : MonoBehaviour
     [SerializeField]
     private float LenghtMove = 5.0f;
 
+    //static private int BuckBoosterCount;
+    private void Awake()
+    {
+        //インスタンス生成
+        instance = this;
+    }
+
     void Start()
     {
         //Flash
@@ -63,6 +66,9 @@ public class PlayerScript : MonoBehaviour
         ShakeBool = false;
         ShakeTimer = 0;
         ShakeCount = false;
+
+        //オーディオ準備
+        audioSource = GetComponent<AudioSource>();
     }
     void Update()
     {
@@ -173,7 +179,12 @@ public class PlayerScript : MonoBehaviour
         {
             if (collision.gameObject.name == "Enemy")
             {
+                //オーディオ再生
 
+
+                Destroy(collision.gameObject);
+                FlashTimer = 0;
+                FlashCount = true;
             }
         }//End if
         if (collision.gameObject.name == "item")
@@ -194,4 +205,11 @@ public class PlayerScript : MonoBehaviour
     {
         return downBoosters;
     }
+
+    //サウンドを再生する
+    public void PlaySound(AudioClip clip)
+    {
+        audioSource.PlayOneShot(clip);
+    }
+
 }

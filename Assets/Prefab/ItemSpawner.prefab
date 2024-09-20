@@ -50,6 +50,6 @@ MonoBehaviour:
   spawnInterval: 6
   moveSpeed: 5
   spawnDistance: 40
-  spawnRange: 10
+  spawnRange: 15
   maxspawn: 4
   minspawn: 1
