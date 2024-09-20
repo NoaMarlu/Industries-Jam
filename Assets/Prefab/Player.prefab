@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 7479189515921432724}
   - component: {fileID: -5839676991649979107}
   m_Layer: 0
-  m_Name: humans_ship_04
+  m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
