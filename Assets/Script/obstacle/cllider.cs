@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.EventSystems.EventTrigger;
 
 public class cllider : MonoBehaviour
 {
@@ -28,10 +29,8 @@ public class cllider : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-           
-               
-                    Destroy(player);
-                    Destroy(gameObject);
+            Destroy(gameObject);
+            PlayerScript.instance.OnDamage();
                 
             
         }
