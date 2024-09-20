@@ -19,12 +19,12 @@ public class ChangeScene : MonoBehaviour
             case "TitleScene":
                 if (Input.GetKeyDown("space"))
                 {
-                    SceneManager.LoadScene("Mori", LoadSceneMode.Single);
+                    SceneManager.LoadScene("GameScene", LoadSceneMode.Single);
                 }
                 break;
 
-            case "Mori":
-                if (Input.GetKeyDown("space"))
+            case "GameScene":
+                if (PlayerScript.instance.Energy<0||Boss.instance.BossDie==true)
                 {
                     SceneManager.LoadScene("ResultScene", LoadSceneMode.Single);
                 }
