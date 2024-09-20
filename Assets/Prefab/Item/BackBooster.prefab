@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 3090460160123365198}
   - component: {fileID: 3090460160123365199}
   - component: {fileID: 3090460160123365196}
-  - component: {fileID: 3090460160123365193}
   - component: {fileID: 7339263980099499219}
   - component: {fileID: 4511321825816797971}
+  - component: {fileID: 2961001686244344652}
   m_Layer: 0
   m_Name: BackBooster
   m_TagString: Untagged
@@ -74,8 +74,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -2111155027
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 8c7852e625eea414893134a6fb055705, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -114,50 +114,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.20857202, y: 0.3567665}
   m_EdgeRadius: 0
---- !u!114 &2961001686244344653
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2961001686244344649}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c356bb58e30cbd43a0f5f987313064a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Energy: 100
-  DisEnergyPalam: 20
-  FlashTimeUpdate: 0.5
-  FlashObject: {fileID: 0}
-  Radius: 1
-  ShakeTime: 0.05
-  ShakeSizeX: 0.34
-  ShakeSizeY: 0.32
-  ShakeTimeUpdate: 0.2
-  SideMove: 10
-  LenghtMove: 5
---- !u!50 &2961001686244344652
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3090460160123365186}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!114 &7339263980099499219
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -269,3 +225,24 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!50 &2961001686244344652
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3090460160123365186}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
