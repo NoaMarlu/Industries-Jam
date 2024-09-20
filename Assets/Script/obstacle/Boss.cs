@@ -1,10 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class Boss : MonoBehaviour
 {
-
+    static public Boss instance;
     public Sprite bossSprite; // ボスの画像（スプライト）
     public float initialSpeed = 5.0f; // 最初の左移動のスピード
     public float ellipseSpeed = 2.0f; // 楕円軌道のスピード
@@ -17,6 +17,7 @@ public class Boss : MonoBehaviour
     private float timeElapsed = 0.0f; // 経過時間
     private SpriteRenderer spriteRenderer; // SpriteRenderer
     private bool isBossActivated; // ボスが有効化されているかどうか
+    public bool BossDie = false;
     //スポーンする場所
     public float spawnX = 10.0f;
 
@@ -89,7 +90,8 @@ public class Boss : MonoBehaviour
             // プレイヤーと衝突した場合の処理（例：プレイヤーを破壊）
             Debug.Log("Boss collided with the player!");
             // 追加の処理をここに記述（例：プレイヤーのHP減少やゲームオーバー処理）
-
+            BossDie = true;
+            Destroy(gameObject);
         }
     }
 }
