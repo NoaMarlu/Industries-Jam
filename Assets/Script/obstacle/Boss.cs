@@ -91,6 +91,7 @@ public class Boss : MonoBehaviour
             // プレイヤーと衝突した場合の処理（例：プレイヤーを破壊）
             Debug.Log("Boss collided with the player!");
             // 追加の処理をここに記述（例：プレイヤーのHP減少やゲームオーバー処理）
+            GameSystem.Instance.PlaySound(GameSystem.Instance.BossDieClip);
             BossDie = true;
             GameSystem.Instance.isClear = true;
         }

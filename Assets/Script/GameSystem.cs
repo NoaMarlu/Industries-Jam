@@ -16,6 +16,13 @@ public class GameSystem : MonoBehaviour
     public bool ItemGet = false;
 
     public bool isClear = false;
+
+    //audio
+    private AudioSource audioSource;
+    public AudioClip BossDieClip;
+    [SerializeField, Label("ゲームオーバー音")] public AudioClip Overclip;
+    [SerializeField, Label("ゲームクリア音")] public AudioClip Clearclip;
+
     //public float 
     void Awake()
     {
@@ -33,7 +40,8 @@ public class GameSystem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        //オーディオ準備
+        audioSource = GetComponent<AudioSource>();
     }
 
     public  void AddSpeed(float speed)
@@ -85,5 +93,11 @@ public class GameSystem : MonoBehaviour
             boss.SpawnBoss(); // ボスの登場
             isBossActive = true; // ボスがアクティブ状態になる
         }
+    }
+
+    //ボス撃破時の死亡音
+    public void PlaySound(AudioClip clip)
+    {
+        audioSource.PlayOneShot(clip);
     }
 }

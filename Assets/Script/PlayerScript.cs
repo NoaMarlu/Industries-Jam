@@ -170,6 +170,9 @@ public class PlayerScript : MonoBehaviour
     }//End void
     public void OnDamage()
     {
+        //オーディオ再生
+        PlaySound(hitclip);
+
         FlashTimer = 0;
         FlashCount = true;
         ShakeCount = true;
@@ -184,9 +187,7 @@ public class PlayerScript : MonoBehaviour
         {
             if (collision.gameObject.name == "Enemy")
             {
-                //オーディオ再生
-                PlaySound(hitclip);
-
+                
                 Destroy(collision.gameObject);
                 FlashTimer = 0;
                 FlashCount = true;

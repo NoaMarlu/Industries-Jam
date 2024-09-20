@@ -3,7 +3,9 @@ guid: acb535df21a017641a06c68cd62d8182
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - Overclip: {fileID: 8300000, guid: 6e70933f46cf9db46a3596de6facefa6, type: 3}
+  - Clearclip: {fileID: 8300000, guid: 86c85a0734f49f84fadfd1429191ec32, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

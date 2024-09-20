@@ -6,10 +6,11 @@ using UnityEngine.SceneManagement;
 
 public class ChangeScene : MonoBehaviour
 {
+
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -33,12 +34,15 @@ public class ChangeScene : MonoBehaviour
                 if (PlayerScript.instance.Energy < 0) 
                 {
                     //GameSystem.Instance.isClear = false;
+                    GameSystem.Instance.PlaySound(GameSystem.Instance.Overclip);
                     SceneManager.LoadScene("ResultScene", LoadSceneMode.Single);
                 }
                 if(GameSystem.Instance.isBossActive)
                 {
                     if (GameSystem.Instance.isClear)
                     {
+                        //オーディオ再生
+                        GameSystem.Instance.PlaySound(GameSystem.Instance.Clearclip);
                         SceneManager.LoadScene("ResultScene", LoadSceneMode.Single);
                     }
                 }
