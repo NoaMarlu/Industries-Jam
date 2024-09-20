@@ -60,6 +60,7 @@ public class UpBooster : ItemScript
                 number = PlayerScript.instance.GetUpBoosters().Count;
                 GameSystem.Instance.AddSpeed(speed);
                 hit = true;
+                GameSystem.Instance.ItemGet = true;
             }
         }
         

@@ -30,12 +30,14 @@ public class DownBooster : ItemScript
             transform.position = new Vector3(PlayerScript.instance.transform.position.x - number + offset.x,
                                               PlayerScript.instance.transform.position.y + offset.y,
                                               PlayerScript.instance.transform.position.z + offset.z);
+            GameSystem.Instance.ItemGet = true;
         }
         //éÊìæÇµÇƒÇ¢Ç»Ç¢èÍçá
         else
         {
             //âÊñ âEÇ©ÇÁó¨ÇÍÇƒÇ≠ÇÈ
             transform.Translate(moveDirection * moveSpeed * Time.deltaTime);
+            GameSystem.Instance.ItemGet = false;
         }
 
         //âÊñ ì‡ê∂ë∂îªíË
@@ -59,6 +61,7 @@ public class DownBooster : ItemScript
                 number = PlayerScript.instance.GetDownBoosters().Count;
                 GameSystem.Instance.AddSpeed(speed);
                 hit = true;
+                GameSystem.Instance.ItemGet = true;
             }
         }
         

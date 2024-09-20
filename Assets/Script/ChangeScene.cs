@@ -20,7 +20,12 @@ public class ChangeScene : MonoBehaviour
             case "TitleScene":
                 if (Input.GetKeyDown("space"))
                 {
+
                     SceneManager.LoadScene("GameScene", LoadSceneMode.Single);
+                    GameSystem.Instance.isClear = false;
+                    GameSystem.Instance.isBossActive = false;
+                    GameSystem.Instance.GamePosition = 0;
+                    GameSystem.Instance.BaseSpeed = 5;
                 }
                 break;
 

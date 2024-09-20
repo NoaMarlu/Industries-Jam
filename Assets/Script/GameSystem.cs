@@ -13,6 +13,7 @@ public class GameSystem : MonoBehaviour
     public Boss boss; // ボスの参照
     public bool isBossActive = false; // ボスがアクティブかどうか
 
+    public bool ItemGet = false;
 
     public bool isClear = false;
     //public float 

@@ -56,7 +56,7 @@ public class ItemSpawn : MonoBehaviour
                                                 randomY,
                                                 PlayerScript.instance.transform.position.z);
 
-            int spawntype = Random.Range((int)Item.Back, (int)Item.Down);
+            int spawntype = Random.Range(0, 3);
 
 
             switch (spawntype)
