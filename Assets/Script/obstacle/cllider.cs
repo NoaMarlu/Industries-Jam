@@ -30,7 +30,6 @@ public class cllider : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             Destroy(gameObject);
-            GameSystem.Instance.DisSpeed();
             PlayerScript.instance.OnDamage();
                 
             

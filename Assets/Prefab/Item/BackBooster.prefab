@@ -114,30 +114,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.20857202, y: 0.3567665}
   m_EdgeRadius: 0
---- !u!114 &2961001686244344653
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2961001686244344649}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c356bb58e30cbd43a0f5f987313064a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Energy: 100
-  DisEnergyPalam: 20
-  FlashTimeUpdate: 0.5
-  FlashObject: {fileID: 0}
-  Radius: 1
-  ShakeTime: 0.05
-  ShakeSizeX: 0.34
-  ShakeSizeY: 0.32
-  ShakeTimeUpdate: 0.2
-  SideMove: 10
-  LenghtMove: 5
---- !u!50 &2961001686244344652
+--- !u!50 &3090460160123365193
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
